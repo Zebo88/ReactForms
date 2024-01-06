@@ -65,9 +65,13 @@ export default function SignUpForm({ token, setToken }){
             onChange={ (e) => setPassword(e.target.value)}
             placeholder="Password"
            />
-           <label htmlFor="checkbox" className="showPW">Show Password</label>
-           <input className="checkbox" name="checkbox" type="checkbox" onClick={handleToggle}/>
         </label>
+        <label className="showPW">
+          Show Password
+          <input id="showPW" className="checkbox" type="checkbox" onClick={handleToggle}
+          />
+          </label>
+        
         <br/>
         <button type="submit">Submit</button>
       </form>
