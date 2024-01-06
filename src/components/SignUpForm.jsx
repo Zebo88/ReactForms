@@ -6,6 +6,7 @@ export default function SignUpForm({ token, setToken }){
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const [type, setType] = useState('password');
 
   async function handleSubmit(event){
     event.preventDefault();
@@ -30,6 +31,14 @@ export default function SignUpForm({ token, setToken }){
     }
 
   };
+
+  const handleToggle = () => {
+    if (type==='password'){
+       setType('text');
+    } else {
+       setType('password');
+    }
+ }
   
   return (
     <>
@@ -51,15 +60,16 @@ export default function SignUpForm({ token, setToken }){
         <label>
           <input 
             id="PW" 
-            type="password" 
+            type={type} 
             value={ password } 
             onChange={ (e) => setPassword(e.target.value)}
             placeholder="Password"
            />
+           <label htmlFor="checkbox" className="showPW">Show Password</label>
+           <input className="checkbox" name="checkbox" type="checkbox" onClick={handleToggle}/>
         </label>
         <br/>
         <button type="submit">Submit</button>
-
       </form>
     </>
 

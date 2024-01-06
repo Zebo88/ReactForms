@@ -46,10 +46,16 @@ input {
   border-color: #595eb9;
   text-align: center;
   background-color: #383838;
-  
 }
 input:focus {
   border-color: #747bff;
+}
+.checkbox {
+  width:12px;
+}
+.showPW {
+  display: inline-block;
+  font-size: 10pt;
 }
 
 button {
